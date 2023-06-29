@@ -1,0 +1,28 @@
+
+
+.cards {
+    margin-top: 4rem;
+  }
+  
+  .card {
+    width: 14rem;
+    height: 20rem;  
+}
+  
+  .card-img-top {
+    height: 12rem;
+    object-fit: cover;
+  }
+  
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+  
+  .btn {
+    position: relative;
+    top: 30px;
+    transition: 1s;  }
+  
