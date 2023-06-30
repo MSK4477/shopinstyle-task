@@ -39,9 +39,9 @@ const Card = ({ sale, imageSrc, stars, title, description, btn }) => {
                 <button
                       className="btn btn-outline-dark mt-auto"
                       onClick={handleClick}
-                      style={{ position: "relative", top: "30px" }}
+                      style={{ position: "relative", top: "30px", borderRadius:"8px" }}
                     >
-                      {btn}c
+                      {btn}
                     </button>
               </div>
             </div>
