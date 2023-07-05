@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import card from "./card.module.css";
 
-const Card = ({ sale, imageSrc, stars, title, description, btn }) => {
+const Card = ({
+  imageSrc,
+  title,
+  description,
+  stars,
+  btn,
+  sale,
+  addToCart,
+  removeFromCart
+}) => {
   const sales = {
     position: 'absolute',
     border: '1px solid',
@@ -15,12 +24,15 @@ const Card = ({ sale, imageSrc, stars, title, description, btn }) => {
     fontWeight: 'bold'
   };
 
-  const handleClick = (e) => {
-    e.preventDefault(); // Prevent default behavior of the anchor element
-    let btnVal = btn;
+  const [cart, setCart] = useState(false);
 
-    if (btnVal === "Add to Cart") {
-      // Perform the desired action
+  const handleCartAction = () => {
+    if (cart) {
+      setCart(false);
+      removeFromCart(description);
+    } else {
+      setCart(true);
+      addToCart(description);
     }
   };
 
@@ -33,16 +45,22 @@ const Card = ({ sale, imageSrc, stars, title, description, btn }) => {
               <p style={sales}>{sale}</p>
               <img src={imageSrc} className="card-img-top" alt="..." />
               <div className="card-body">
-                <h6 className="card-title">{title}</h6>
+                <h5 className="card-title">{title}</h5>
                 <p>{stars}</p>
                 <p className="card-text">{description}</p>
-                <button
-                      className="btn btn-outline-dark mt-auto"
-                      onClick={handleClick}
-                      style={{ position: "relative", top: "30px", borderRadius:"8px" }}
-                    >
-                      {btn}
-                    </button>
+                {cart ? (
+                  <button className="btn btn-danger" onClick={handleCartAction}>
+                    Remove from Cart
+                  </button>
+                ) : (
+                  <button
+                    onClick={handleCartAction}
+                    className="btn btn-outline-dark mt-auto"
+                    style={{ position: "relative", top: "30px", borderRadius: "8px" }}
+                  >
+                  {btn}
+                  </button>
+                )}
               </div>
             </div>
           </div>
