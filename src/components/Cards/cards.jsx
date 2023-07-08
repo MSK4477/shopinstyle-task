@@ -9,7 +9,8 @@ const Card = ({
   btn,
   sale,
   addToCart,
-  removeFromCart
+  removeFromCart,
+  id
 }) => {
   const sales = {
     position: 'absolute',
@@ -29,10 +30,10 @@ const Card = ({
   const handleCartAction = () => {
     if (cart) {
       setCart(false);
-      removeFromCart(description);
+      removeFromCart(id);
     } else {
       setCart(true);
-      addToCart(description);
+      addToCart(id);
     }
   };
 
@@ -49,14 +50,25 @@ const Card = ({
                 <p>{stars}</p>
                 <p className="card-text">{description}</p>
                 {cart ? (
-                  <button className="btn btn-danger" onClick={handleCartAction}>
-                    Remove from Cart
+                  <button className="btn btn-outline-dark mt-auto" 
+                  onClick={handleCartAction}
+                  style={{  
+                    backgroundColor:"red",
+                  color:"white",
+                  position:"relative",
+                  top: "30px", borderRadius: "8px"  }}
+                  
+                  >
+                   
+                    Remove From Cart 
                   </button>
                 ) : (
                   <button
                     onClick={handleCartAction}
                     className="btn btn-outline-dark mt-auto"
-                    style={{ position: "relative", top: "30px", borderRadius: "8px" }}
+                    style={{ position: "relative", 
+                    top: "30px", 
+                    borderRadius: "8px" }}
                   >
                   {btn}
                   </button>

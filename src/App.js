@@ -13,15 +13,15 @@ function App() {
 
   const [cart, setCart] = useState([]);
 
-  const addToCart = (item) => {
-    setCart([...cart, item]);
+  const addToCart = (itemId) => {
+    setCart([...cart, itemId]);
   };
 
-  const removeFromCart = (item) => {
-    setCart(cart.filter((cartItem) => cartItem.description !== item));
+  const removeFromCart = (id) => {
+    setCart(cart.filter((itemId) => itemId !== id));
   };
   
-
+console.log(cart)
   return (
     <div className="App">
       <Header cartCount={cart.length} />
@@ -37,6 +37,7 @@ function App() {
                 description="$40.00 - $80.00"
                 stars={<br />}
                 btn="View Options"
+                id={"1"}
               />
               <Card
                 imageSrc="https://dummyimage.com/450x300/dee2e6/6c757d.jpg"
@@ -55,6 +56,7 @@ function App() {
                 btn="Add to Cart"
                 addToCart={addToCart}
                 removeFromCart={removeFromCart}
+                id={"2"}
               />
               <Card
                 imageSrc="https://dummyimage.com/450x300/dee2e6/6c757d.jpg"
@@ -63,6 +65,7 @@ function App() {
                 stars={<br />}
                 btn="Add to Cart"
                 sale="Sale"
+                id={"3"}
                 addToCart={addToCart}
                 removeFromCart={removeFromCart}
               />
@@ -82,6 +85,7 @@ function App() {
                 btn="Add to Cart"
                 addToCart={addToCart}
                 removeFromCart={removeFromCart}
+                id={"4"}
               />
             </div>
           </div>
@@ -96,6 +100,7 @@ function App() {
                 description="$50.00 - $90.00"
                 stars={<br />}
                 btn="Add to Cart"
+                id={"5"}
               />
               <Card
                 imageSrc="https://dummyimage.com/450x300/dee2e6/6c757d.jpg"
@@ -103,6 +108,7 @@ function App() {
                 description="$120.00 - $280.00"
                 stars={<br />}
                 btn="View Options"
+                id={"8"}
               />
               <Card
                 imageSrc="https://dummyimage.com/450x300/dee2e6/6c757d.jpg"
@@ -120,6 +126,7 @@ function App() {
                 btn="Add to Cart"
                 addToCart={addToCart}
                 removeFromCart={removeFromCart}
+                id={"6"}
               />
               <Card
                 imageSrc="https://dummyimage.com/450x300/dee2e6/6c757d.jpg"
@@ -138,6 +145,7 @@ function App() {
                 btn="Add to Cart"
                 addToCart={addToCart}
                 removeFromCart={removeFromCart}
+                id={"7"}
               />
             </div>
           </div>
