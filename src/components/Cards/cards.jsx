@@ -28,6 +28,7 @@ const Card = ({
   const [cart, setCart] = useState(false);
 
   const handleCartAction = () => {
+
     if (cart) {
       setCart(false);
       removeFromCart(id);
@@ -35,6 +36,7 @@ const Card = ({
       setCart(true);
       addToCart(id);
     }
+    
   };
 
   return (
@@ -46,17 +48,18 @@ const Card = ({
               <p style={sales}>{sale}</p>
               <img src={imageSrc} className="card-img-top" alt="..." />
               <div className="card-body">
-                <h5 className="card-title">{title}</h5>
+                <h5 className="card-title" style={{textAlign:"center"}}>{title}</h5>
                 <p>{stars}</p>
-                <p className="card-text">{description}</p>
+                <p className="card-text" style={{textAlign:"center"}}>{description}</p>
                 {cart ? (
                   <button className="btn btn-outline-dark mt-auto" 
                   onClick={handleCartAction}
                   style={{  
-                    backgroundColor:"red",
                   color:"white",
+                  backgroundColor:"#ff1a1a",
                   position:"relative",
-                  top: "30px", borderRadius: "8px"  }}
+                  top: "30px", left: "15px",
+                  borderRadius: "8px"  }}
                   
                   >
                    
@@ -68,6 +71,7 @@ const Card = ({
                     className="btn btn-outline-dark mt-auto"
                     style={{ position: "relative", 
                     top: "30px", 
+                    left: "20%",
                     borderRadius: "8px" }}
                   >
                   {btn}

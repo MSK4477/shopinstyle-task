@@ -9,6 +9,9 @@ function App() {
   const starStyle = {
     color: "gold",
     fontSize: "15px",
+    position:"relative",
+    left:"50px",
+    
   };
 
   const [cart, setCart] = useState([]);
@@ -36,8 +39,10 @@ console.log(cart)
                 title={<b>Fancy Product</b>}
                 description="$40.00 - $80.00"
                 stars={<br />}
-                btn="View Options"
+                btn="Add to Cart"
                 id={"1"}
+                addToCart={addToCart}
+                removeFromCart={removeFromCart}
               />
               <Card
                 imageSrc="https://dummyimage.com/450x300/dee2e6/6c757d.jpg"
@@ -101,13 +106,17 @@ console.log(cart)
                 stars={<br />}
                 btn="Add to Cart"
                 id={"5"}
+                addToCart={addToCart}
+                removeFromCart={removeFromCart}
               />
               <Card
                 imageSrc="https://dummyimage.com/450x300/dee2e6/6c757d.jpg"
                 title={<b>Fancy Product</b>}
                 description="$120.00 - $280.00"
                 stars={<br />}
-                btn="View Options"
+                btn="Add to Cart"
+                addToCart={addToCart}
+                removeFromCart={removeFromCart}
                 id={"8"}
               />
               <Card
