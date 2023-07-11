@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import card from "./card.module.css";
+import styles from "./card.module.css";
 
 const Card = ({
   imageSrc,
@@ -10,7 +10,8 @@ const Card = ({
   sale,
   addToCart,
   removeFromCart,
-  id
+  id,
+  viewOptions
 }) => {
   const sales = {
     position: 'absolute',
@@ -28,7 +29,6 @@ const Card = ({
   const [cart, setCart] = useState(false);
 
   const handleCartAction = () => {
-
     if (cart) {
       setCart(false);
       removeFromCart(id);
@@ -36,50 +36,43 @@ const Card = ({
       setCart(true);
       addToCart(id);
     }
-    
   };
 
   return (
-    <div className="container">
-      <div className="row">
-        <div className="col-md-3">
-          <div className={card.cards}>
-            <div className="card" style={{ width: '14rem', height: '23rem' }}>
-              <p style={sales}>{sale}</p>
-              <img src={imageSrc} className="card-img-top" alt="..." />
-              <div className="card-body">
-                <h5 className="card-title" style={{textAlign:"center"}}>{title}</h5>
-                <p>{stars}</p>
-                <p className="card-text" style={{textAlign:"center"}}>{description}</p>
-                {cart ? (
-                  <button className="btn btn-outline-dark mt-auto" 
-                  onClick={handleCartAction}
-                  style={{  
-                  color:"white",
-                  backgroundColor:"#ff1a1a",
-                  position:"relative",
-                  top: "30px", left: "15px",
-                  borderRadius: "8px"  }}
-                  
-                  >
-                   
-                    Remove From Cart 
-                  </button>
-                ) : (
-                  <button
-                    onClick={handleCartAction}
-                    className="btn btn-outline-dark mt-auto"
-                    style={{ position: "relative", 
-                    top: "30px", 
-                    left: "20%",
-                    borderRadius: "8px" }}
-                  >
-                  {btn}
-                  </button>
-                )}
-              </div>
-            </div>
-          </div>
+    <div className={styles.cards}>
+      <div className="card" style={{ width: '14rem', height: '23rem' }}>
+        <p style={sales}>{sale}</p>
+        <img src={imageSrc} className="card-img-top" alt="..." />
+        <div className="card-body">
+          <h5 className="card-title" style={{ textAlign: "center" }}>{title}</h5>
+          <p>{stars}</p>
+          <p className="card-text" style={{ textAlign: "center" }}>{description}</p>
+          
+          {cart ? (
+            <button
+              className="btn btn-outline-dark mt-auto"
+              onClick={handleCartAction}
+              style={{
+                color: "white",
+                backgroundColor: "#ff1a1a",
+                position: "relative",
+                top: "30px", left: "15px",
+                borderRadius: "8px"
+              }}
+            >
+              Remove From Cart
+            </button>
+          ) : (
+            <button
+              onClick={handleCartAction}
+              className="btn btn-outline-dark mt-auto"
+              style={{ position: "relative", top: "30px", left: "20%", borderRadius: "8px" }}
+            >
+              {btn}
+            </button>
+            
+          )}
+         
         </div>
       </div>
     </div>
