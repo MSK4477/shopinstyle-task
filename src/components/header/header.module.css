@@ -113,5 +113,28 @@ font-size: 13px;
   .dropdownItem:hover {
     background-color: #ddd;
   }
+@media screen and (max-width: 530px){
+  
+  .header  ul  li{
+    
+    position: relative;
+    right: 40px;
+    padding: 0;
+    color: blueviolet;
+    font-size: smaller;
+  }
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    left: 1px;
+    margin-right: 5px;
+    font-size: smaller;
+  }
+.shop{
+  font-size: smaller;
+}
+}
+    
+  
   
 

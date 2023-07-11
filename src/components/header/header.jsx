@@ -10,7 +10,7 @@ const Header = ({ cartCount }) => {
 
   return (
     <header className={headerStyles.header}>
-      <div style={{ fontWeight: 'bold', cursor: 'pointer' }}>Start BootStrap</div>
+      <div  className={headerStyles.shop} style={{ fontWeight: 'bold', cursor: 'pointer' }}>Start BootStrap</div>
       <ul>
         <li>Home</li>
       </ul>
