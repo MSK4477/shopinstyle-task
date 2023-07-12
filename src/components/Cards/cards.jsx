@@ -54,7 +54,7 @@ const Card = ({
               onClick={handleCartAction}
               style={{
                 color: "white",
-                backgroundColor: "#ff1a1a",
+                backgroundColor: "gray",
                 position: "relative",
                 top: "30px", left: "15px",
                 borderRadius: "8px"
